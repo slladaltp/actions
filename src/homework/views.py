@@ -208,3 +208,4 @@ def index_with_get(request):
     if not name:
         name = 'stranger'
     return HttpResponse(f'Hello, {name}')
+def test(
