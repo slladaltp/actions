@@ -6,16 +6,17 @@ from homework.models import Student, Person, Group, Subject, Course, Lesson
 def index(request):
     return HttpResponse('Hello World!')
 
+
 def home(request):
     container = 'Hello World!'
     return render(request, 'home.html', context={
         'container': container,
     })
 
+
 def students_json(request):
     students = Student.objects.all()
     return JsonResponse({'students': list(students)})
-
 
 
 def person_add(request):

@@ -2,9 +2,6 @@
 from django.db.models import Model, CharField, DateTimeField, IntegerField
 
 
-
-
-
 class DateTimeMixin(Model):
     created_at = DateTimeField(auto_now_add=True, null=True)
     updated_ad = DateTimeField(auto_now=True)
@@ -12,11 +9,11 @@ class DateTimeMixin(Model):
     class Meta:
         abstract = True
 
+
 class Lesson(DateTimeMixin, Model):
 
     lesson_name = CharField(max_length=50)
     lesson_type = CharField(max_length=50, default='Practical')
-
 
 
 class Student(DateTimeMixin, Model):
@@ -52,4 +49,3 @@ class Person(DateTimeMixin, Model):
     age_person = IntegerField(default='0')
     type_person = CharField(max_length=50)
     status_person = CharField(max_length=50, default='Active')
-
